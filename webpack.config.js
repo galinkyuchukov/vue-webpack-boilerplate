@@ -10,7 +10,7 @@ module.exports = function(env){
             filename: 'build.js',
             path: path.resolve(__dirname, 'dist')
         },
-        devtool: 'inline-source-map',
+        devtool: env.NODE_ENV == 'development' ? 'inline-source-map' : false,
         module: {
             rules: [
                 {
